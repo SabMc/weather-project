@@ -72,7 +72,7 @@ function showTemperature(response) {
   let currentTemperatureMax = Math.round(response.data.main.temp_max);
   let currentTemperatureMin = Math.round(response.data.main.temp_min);
   let currentHumidity = response.data.main.humidity;
-  let currentWind = response.data.wind.speed;
+  let currentWind = Math.round((response.data.wind.speed / 36) * 10);
   let currentPressure = response.data.main.pressure;
 
   let displayActualLocation = document.querySelector("#current-city");
@@ -114,7 +114,7 @@ function getCity(event) {
     let temperatureMax = Math.round(response.data.main.temp_max);
     let temperatureMin = Math.round(response.data.main.temp_min);
     let humidity = response.data.main.humidity;
-    let wind = response.data.wind.speed;
+    let wind = Math.round((response.data.wind.speed / 36) * 10);
     let pressure = response.data.main.pressure;
 
     let displaySearchedTemperature = document.querySelector("#temperature");
