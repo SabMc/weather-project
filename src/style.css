@@ -1,0 +1,82 @@
+.background {
+  background: url("../images/mesperleuc2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 20px;
+}
+.weatherContainer {
+  background-color: rgba(176, 214, 245, 0.6);
+  border: 1px solid #898b8a;
+  border-radius: 10px;
+  color: #707271;
+  display: block;
+  font-family: "Goldman", cursive;
+  font-weight: 100;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding-bottom: 90px;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  width: fit-content;
+}
+
+.weatherContainer input {
+  border: 2px solid #707271;
+  border-radius: 10px;
+  color: #707271;
+}
+
+.weatherContainer input:hover {
+  border-color: #434444;
+  color: #434444;
+}
+
+form {
+  font-size: 20px;
+  padding: 20px 0;
+  text-align: center;
+}
+
+input {
+  background-color: transparent;
+}
+.currentCity {
+  font-size: 30px;
+  margin: 10px 0;
+  text-align: center;
+}
+.currentTemperatur {
+  font-size: 80px;
+}
+.units {
+  font-size: 25px;
+  position: relative;
+  top: -30px;
+}
+.currentWeather {
+  list-style: none;
+  font-size: 20px;
+}
+hr {
+  border-top: 2px solid rgb(137, 138, 139);
+}
+.forecast {
+  text-align: center;
+  margin-top: 40px;
+}
+.card {
+  background-color: transparent;
+  border: none;
+  margin-bottom: 20px;
+}
+.card-title {
+  font-size: 20px;
+}
+.card-body {
+  font-size: 22px;
+  padding-top: 0;
+}
+.card-text {
+  margin-bottom: 5px;
+}
