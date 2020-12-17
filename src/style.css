@@ -80,3 +80,12 @@ hr {
 .card-text {
   margin-bottom: 5px;
 }
+footer {
+  padding-bottom: 20px;
+}
+a {
+  color: #707271;
+}
+a:hover {
+  color: #434444;
+}
