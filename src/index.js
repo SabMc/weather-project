@@ -46,9 +46,9 @@ function formatDate(date) {
 
   return formattedDate;
 }
+let currentTime = new Date();
 
 let localDate = document.querySelector("#current-date");
-let currentTime = new Date();
 localDate.innerHTML = formatDate(currentTime);
 
 //show current Location
@@ -56,18 +56,28 @@ function showPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let units = "metric";
-  let cnt = "6";
+  let cnt = "3";
   let apiKey = "aac2df75f978d1711f7f24c0ea00540c";
   let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather?";
   let apiUrl = `${apiEndpoint}lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
-  let apiUrlForecast = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${lat}&lon=${lon}&cnt=${cnt}&appid=${apiKey}&units=${units}`;
+  let apiUrlForecast = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&cnt=${cnt}&appid=${apiKey}&units=${units}`;
 
   axios.get(apiUrl).then(showTemperature);
   axios.get(apiUrlForecast).then(showForecast);
 }
 //Forecast actual Position
 function showForecast(response) {
-  console.log(response);
+  console.log(response.data.list[0]);
+  console.log(response.data.list[0].main.temp_max);
+  console.log(response.data.list[0].main.temp_min);
+  let forecastDay1TempMax = Math.round(response.data.list[0].main.temp_max);
+  let forecastDay1TempMin = Math.round(response.data.list[0].main.temp_min);
+
+  let displayforecastDay1TempMax = document.querySelector("#day1TempMax");
+  displayforecastDay1TempMax.innerHTML = forecastDay1TempMax;
+
+  let displayforecastDay1TempMin = document.querySelector("#day1TempMin");
+  displayforecastDay1TempMin.innerHTML = forecastDay1TempMin;
 }
 
 //show current Location
@@ -156,3 +166,5 @@ function getCity(event) {
 }
 let clickCityButton = document.querySelector("#search-form");
 clickCityButton = addEventListener("submit", getCity);
+
+//Forecast Days and Dates
