@@ -68,8 +68,7 @@ function showPosition(position) {
 //Forecast actual Position
 function showForecast(response) {
   console.log(response.data.list[0]);
-  console.log(response.data.list[0].main.temp_max);
-  console.log(response.data.list[0].main.temp_min);
+  console.log(response.data.list[0].main.
   let forecastDay1TempMax = Math.round(response.data.list[0].main.temp_max);
   let forecastDay1TempMin = Math.round(response.data.list[0].main.temp_min);
 
@@ -78,12 +77,21 @@ function showForecast(response) {
 
   let displayforecastDay1TempMin = document.querySelector("#day1TempMin");
   displayforecastDay1TempMin.innerHTML = forecastDay1TempMin;
+
+  //Day 2
+  let forecastDay2TempMax = Math.round(response.data.list[1].main.temp_max);
+  let forecastDay2TempMin = Math.round(response.data.list[1].main.temp_min);
+
+  let displayforecastDay2TempMax = document.querySelector("#day2TempMax");
+  displayforecastDay2TempMax.innerHTML = forecastDay2TempMax;
+
+  let displayforecastDay2TempMin = document.querySelector("#day2TempMin");
+  displayforecastDay2TempMin.innerHTML = forecastDay2TempMin;
 }
 
 //show current Location
 function showTemperature(response) {
   let actualLocation = response.data.name;
-  //console.log(response.data);
 
   let temperature = Math.round(response.data.main.temp);
   let currentTemperatureMax = Math.round(response.data.main.temp_max);
@@ -121,13 +129,13 @@ navigator.geolocation.getCurrentPosition(showPosition);
 function getCity(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#search-city");
-  //console.log(cityInput);
+
   let newCity = document.querySelector("#current-city");
   newCity.innerHTML = cityInput.value;
 
   function showTemperature(response) {
     let temperature = Math.round(response.data.main.temp);
-    console.log(response.data);
+
     let temperatureMax = Math.round(response.data.main.temp_max);
     let temperatureMin = Math.round(response.data.main.temp_min);
     let humidity = response.data.main.humidity;
@@ -168,3 +176,45 @@ let clickCityButton = document.querySelector("#search-form");
 clickCityButton = addEventListener("submit", getCity);
 
 //Forecast Days and Dates
+//Day 1
+function calculateDateOne(date) {
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  //date
+  let forecastDay1 = days[date.getDay()];
+  let forecastDate1 = date.getDate();
+  let forecastMonth1 = months[date.getMonth()];
+
+  let forecast1 = `${forecastDay1} <br />
+                  ${forecastMonth1} ${forecastDate1}`;
+
+  return forecast1;
+}
+let forecast=new Date().getDate();
+let dayOne = forecast+( 24 * 60 * 60 * 1000);
+
+let displayDateOne = document.querySelector("#day1");
+displayDateOne.innerHTML = calculateDateOne(dayOne);
