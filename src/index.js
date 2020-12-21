@@ -163,58 +163,15 @@ function getCity(event) {
 
   let apiKey = "aac2df75f978d1711f7f24c0ea00540c";
   let units = "metric";
-  let cnt = "6";
+  
   let city = cityInput.value;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
-  let apiUrlForecast = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&cnt=${cnt}&appid=${apiKey}&units=${units}`;
+  
 
   axios.get(apiUrl).then(showTemperature);
-  axios.get(apiUrlForecast).then(showForecast);
+  
 }
 let clickCityButton = document.querySelector("#search-form");
 clickCityButton = addEventListener("submit", getCity);
 
-//Forecast Days and Dates
-//Day 1
-function calculateDateOne(date) {
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-
-  let months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-
-  //date
-  let forecastDay1 = days[date.getDay()];
-  let forecastDate1 = date.getDate();
-  let forecastMonth1 = months[date.getMonth()];
-
-  let forecast1 = `${forecastDay1} <br />
-                  ${forecastMonth1} ${forecastDate1}`;
-
-  return forecast1;
-}
-let forecast=new Date().getDate();
-let dayOne = forecast+( 24 * 60 * 60 * 1000);
-
-let displayDateOne = document.querySelector("#day1");
-displayDateOne.innerHTML = calculateDateOne(dayOne);
