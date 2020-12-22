@@ -69,7 +69,7 @@ function showPosition(position) {
 //Forecast actual Position
 function showForecast(response) {
   console.log(response.data);
-  console.log(response.data.daily[1].temp.max);
+  console.log(response.data.daily[3].temp.max);
 
   //Day 1
   let forecastDay1TempMax = Math.round(response.data.daily[1].temp.max);
@@ -80,6 +80,46 @@ function showForecast(response) {
 
   let displayforecastDay1TempMin = document.querySelector("#day1TempMin");
   displayforecastDay1TempMin.innerHTML = forecastDay1TempMin;
+
+  //Day 2
+  let forecastDay2TempMax = Math.round(response.data.daily[2].temp.max);
+  let forecastDay2TempMin = Math.round(response.data.daily[2].temp.min);
+
+  let displayforecastDay2TempMax = document.querySelector("#day2TempMax");
+  displayforecastDay2TempMax.innerHTML = forecastDay2TempMax;
+
+  let displayforecastDay2TempMin = document.querySelector("#day2TempMin");
+  displayforecastDay2TempMin.innerHTML = forecastDay2TempMin;
+
+  //Day 3
+  let forecastDay3TempMax = Math.round(response.data.daily[3].temp.max);
+  let forecastDay3TempMin = Math.round(response.data.daily[3].temp.min);
+
+  let displayforecastDay3TempMax = document.querySelector("#day3TempMax");
+  displayforecastDay3TempMax.innerHTML = forecastDay3TempMax;
+
+  let displayforecastDay3TempMin = document.querySelector("#day3TempMin");
+  displayforecastDay3TempMin.innerHTML = forecastDay3TempMin;
+
+  //Day 4
+  let forecastDay4TempMax = Math.round(response.data.daily[4].temp.max);
+  let forecastDay4TempMin = Math.round(response.data.daily[4].temp.min);
+
+  let displayforecastDay4TempMax = document.querySelector("#day4TempMax");
+  displayforecastDay4TempMax.innerHTML = forecastDay4TempMax;
+
+  let displayforecastDay4TempMin = document.querySelector("#day4TempMin");
+  displayforecastDay4TempMin.innerHTML = forecastDay4TempMin;
+
+  //Day 5
+  let forecastDay5TempMax = Math.round(response.data.daily[5].temp.max);
+  let forecastDay5TempMin = Math.round(response.data.daily[5].temp.min);
+
+  let displayforecastDay5TempMax = document.querySelector("#day5TempMax");
+  displayforecastDay5TempMax.innerHTML = forecastDay5TempMax;
+
+  let displayforecastDay5TempMin = document.querySelector("#day5TempMin");
+  displayforecastDay5TempMin.innerHTML = forecastDay5TempMin;
 }
 
 //show current Location
