@@ -69,7 +69,7 @@ function showPosition(position) {
 //Forecast actual Position
 function showForecast(response) {
   console.log(response.data);
-  console.log(response.data.daily[3].temp.max);
+  console.log(response.data.daily[6].temp.max);
 
   //Day 1
   let forecastDay1TempMax = Math.round(response.data.daily[1].temp.max);
@@ -120,6 +120,16 @@ function showForecast(response) {
 
   let displayforecastDay5TempMin = document.querySelector("#day5TempMin");
   displayforecastDay5TempMin.innerHTML = forecastDay5TempMin;
+
+  //Day 6
+  let forecastDay6TempMax = Math.round(response.data.daily[6].temp.max);
+  let forecastDay6TempMin = Math.round(response.data.daily[6].temp.min);
+
+  let displayforecastDay6TempMax = document.querySelector("#day6TempMax");
+  displayforecastDay6TempMax.innerHTML = forecastDay6TempMax;
+
+  let displayforecastDay6TempMin = document.querySelector("#day6TempMin");
+  displayforecastDay6TempMin.innerHTML = forecastDay6TempMin;
 }
 
 //show current Location
