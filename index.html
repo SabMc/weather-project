@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Homework Weather</title>
     <link
       rel="stylesheet"
@@ -11,6 +10,8 @@
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
       crossorigin="anonymous"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    ********
 
     <script
       src="https://kit.fontawesome.com/94fd0dc484.js"
@@ -107,7 +108,10 @@
                 <p class="card-text">
                   <i class="fas fa-cloud-showers-heavy fa-3x"></i>
                 </p>
-                <div class="card-body">6° | 2°C</div>
+                <div class="card-body">
+                  <span id="day3TempMax">6</span>° |
+                  <span id="day3TempMin">2</span>°C
+                </div>
               </div>
             </div>
 

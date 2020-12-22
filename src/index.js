@@ -68,7 +68,7 @@ function showPosition(position) {
 //Forecast actual Position
 function showForecast(response) {
   console.log(response.data.list[0]);
-  console.log(response.data.list[0].main.
+  console.log(response.data.list[0].main);
   let forecastDay1TempMax = Math.round(response.data.list[0].main.temp_max);
   let forecastDay1TempMin = Math.round(response.data.list[0].main.temp_min);
 
@@ -87,6 +87,16 @@ function showForecast(response) {
 
   let displayforecastDay2TempMin = document.querySelector("#day2TempMin");
   displayforecastDay2TempMin.innerHTML = forecastDay2TempMin;
+
+  //Day 3
+  let forecastDay3TempMax = Math.round(response.data.list[2].main.temp_max);
+  let forecastDay3TempMin = Math.round(response.data.list[2].main.temp_min);
+
+  let displayforecastDay3TempMax = document.querySelector("#day3TempMax");
+  displayforecastDay3TempMax.innerHTML = forecastDay3TempMax;
+
+  let displayforecastDay3TempMin = document.querySelector("#day3TempMin");
+  displayforecastDay3TempMin.innerHTML = forecastDay3TempMin;
 }
 
 //show current Location
@@ -163,15 +173,12 @@ function getCity(event) {
 
   let apiKey = "aac2df75f978d1711f7f24c0ea00540c";
   let units = "metric";
-  
+  let cnt = "5";
   let city = cityInput.value;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-
-  
-
+  let apiUrlForecast = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&cnt=${cnt}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemperature);
-  
+  axios.get(apiUrlForecast).then(showForecast);
 }
 let clickCityButton = document.querySelector("#search-form");
 clickCityButton = addEventListener("submit", getCity);
-
