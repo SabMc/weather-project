@@ -56,47 +56,30 @@ function showPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let units = "metric";
-  let cnt = "3";
+  let cnt = "8";
   let apiKey = "aac2df75f978d1711f7f24c0ea00540c";
   let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather?";
   let apiUrl = `${apiEndpoint}lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
-  let apiUrlForecast = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&cnt=${cnt}&appid=${apiKey}&units=${units}`;
+
+  let apiUrlForecast = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&appid=${apiKey}&units=${units}`;
 
   axios.get(apiUrl).then(showTemperature);
   axios.get(apiUrlForecast).then(showForecast);
 }
 //Forecast actual Position
 function showForecast(response) {
-  console.log(response.data.list[0]);
-  console.log(response.data.list[0].main);
-  let forecastDay1TempMax = Math.round(response.data.list[0].main.temp_max);
-  let forecastDay1TempMin = Math.round(response.data.list[0].main.temp_min);
+  console.log(response.data);
+  console.log(response.data.daily[1].temp.max);
 
-  let displayforecastDay1TempMax = document.querySelector("#day1TempMax");
-  displayforecastDay1TempMax.innerHTML = forecastDay1TempMax;
+  //Day 1
+  //let forecastDay1TempMax = Math.round(response.data.list[0].main.temp_max);
+  //let forecastDay1TempMin = Math.round(response.data.list[0].main.temp_min);
 
-  let displayforecastDay1TempMin = document.querySelector("#day1TempMin");
-  displayforecastDay1TempMin.innerHTML = forecastDay1TempMin;
+  //let displayforecastDay1TempMax = document.querySelector("#day1TempMax");
+  //displayforecastDay1TempMax.innerHTML = forecastDay1TempMax;
 
-  //Day 2
-  let forecastDay2TempMax = Math.round(response.data.list[1].main.temp_max);
-  let forecastDay2TempMin = Math.round(response.data.list[1].main.temp_min);
-
-  let displayforecastDay2TempMax = document.querySelector("#day2TempMax");
-  displayforecastDay2TempMax.innerHTML = forecastDay2TempMax;
-
-  let displayforecastDay2TempMin = document.querySelector("#day2TempMin");
-  displayforecastDay2TempMin.innerHTML = forecastDay2TempMin;
-
-  //Day 3
-  let forecastDay3TempMax = Math.round(response.data.list[2].main.temp_max);
-  let forecastDay3TempMin = Math.round(response.data.list[2].main.temp_min);
-
-  let displayforecastDay3TempMax = document.querySelector("#day3TempMax");
-  displayforecastDay3TempMax.innerHTML = forecastDay3TempMax;
-
-  let displayforecastDay3TempMin = document.querySelector("#day3TempMin");
-  displayforecastDay3TempMin.innerHTML = forecastDay3TempMin;
+  //let displayforecastDay1TempMin = document.querySelector("#day1TempMin");
+  //displayforecastDay1TempMin.innerHTML = forecastDay1TempMin;
 }
 
 //show current Location
