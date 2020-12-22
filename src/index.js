@@ -51,12 +51,12 @@ let currentTime = new Date();
 let localDate = document.querySelector("#current-date");
 localDate.innerHTML = formatDate(currentTime);
 
-//show current Location
+//Show current Location
 function showPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let units = "metric";
-  let cnt = "8";
+
   let apiKey = "aac2df75f978d1711f7f24c0ea00540c";
   let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather?";
   let apiUrl = `${apiEndpoint}lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
@@ -66,11 +66,9 @@ function showPosition(position) {
   axios.get(apiUrl).then(showTemperature);
   axios.get(apiUrlForecast).then(showForecast);
 }
-//Forecast actual Position
-function showForecast(response) {
-  console.log(response.data);
-  console.log(response.data.daily[6].temp.max);
 
+//Forecast current Position
+function showForecast(response) {
   //Day 1
   let forecastDay1TempMax = Math.round(response.data.daily[1].temp.max);
   let forecastDay1TempMin = Math.round(response.data.daily[1].temp.min);
@@ -131,8 +129,93 @@ function showForecast(response) {
   let displayforecastDay6TempMin = document.querySelector("#day6TempMin");
   displayforecastDay6TempMin.innerHTML = forecastDay6TempMin;
 }
+//Forecast Date 1
+function calculateForecastDay1(date) {
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
 
-//show current Location
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  //date
+  let forecastDay = days[date.getDay()];
+  let forecastDate = date.getDate();
+  let forecastMonth = months[date.getMonth()];
+
+  let forecastedDate1 = `${forecastDay} <br /> ${forecastMonth} ${forecastDate}`;
+
+  return forecastedDate1;
+}
+
+let forecastDate1 = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
+console.log(forecastDate1);
+
+let displayForecastDate1 = document.querySelector("#day1");
+displayForecastDate1.innerHTML = calculateForecastDay1(forecastDate1);
+
+//Forecast Date 2
+function calculateForecastDay2(date) {
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  //date
+  let forecastDay = days[date.getDay()];
+  let forecastDate = date.getDate();
+  let forecastMonth = months[date.getMonth()];
+
+  let forecastedDate2 = `${forecastDay} <br /> ${forecastMonth} ${forecastDate}`;
+
+  return forecastedDate2;
+}
+
+let forecastDate2 = new Date(new Date().getTime() + 24 * 60 * 60 * 1000 * 2);
+console.log(forecastDate2);
+
+let displayForecastDate2 = document.querySelector("#day2");
+displayForecastDate2.innerHTML = calculateForecastDay2(forecastDate2);
+
+//Show current Location
 function showTemperature(response) {
   let actualLocation = response.data.name;
 
@@ -168,7 +251,6 @@ function showTemperature(response) {
 navigator.geolocation.getCurrentPosition(showPosition);
 
 //Search Function: show searched Location and Weather Condition
-
 function getCity(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#search-city");
@@ -206,12 +288,12 @@ function getCity(event) {
 
   let apiKey = "aac2df75f978d1711f7f24c0ea00540c";
   let units = "metric";
-  let cnt = "5";
   let city = cityInput.value;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-  let apiUrlForecast = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&cnt=${cnt}&appid=${apiKey}&units=${units}`;
+
+  //let apiUrlForecast = `https://api.openweathermap.org/data/2.5/onecall?q=${city}&exclude=current,minutely,hourly,alerts&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemperature);
-  axios.get(apiUrlForecast).then(showForecast);
+  //axios.get(apiUrlForecast).then(showForecast);
 }
 let clickCityButton = document.querySelector("#search-form");
 clickCityButton = addEventListener("submit", getCity);
