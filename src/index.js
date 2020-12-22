@@ -215,6 +215,178 @@ console.log(forecastDate2);
 let displayForecastDate2 = document.querySelector("#day2");
 displayForecastDate2.innerHTML = calculateForecastDay2(forecastDate2);
 
+//Forecast Date 3
+function calculateForecastDay3(date) {
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  //date
+  let forecastDay = days[date.getDay()];
+  let forecastDate = date.getDate();
+  let forecastMonth = months[date.getMonth()];
+
+  let forecastedDate3 = `${forecastDay} <br /> ${forecastMonth} ${forecastDate}`;
+
+  return forecastedDate3;
+}
+
+let forecastDate3 = new Date(new Date().getTime() + 24 * 60 * 60 * 1000 * 3);
+console.log(forecastDate3);
+
+let displayForecastDate3 = document.querySelector("#day3");
+displayForecastDate3.innerHTML = calculateForecastDay3(forecastDate3);
+
+//Forecast Date 4
+function calculateForecastDay4(date) {
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  //date
+  let forecastDay = days[date.getDay()];
+  let forecastDate = date.getDate();
+  let forecastMonth = months[date.getMonth()];
+
+  let forecastedDate4 = `${forecastDay} <br /> ${forecastMonth} ${forecastDate}`;
+
+  return forecastedDate4;
+}
+
+let forecastDate4 = new Date(new Date().getTime() + 24 * 60 * 60 * 1000 * 4);
+console.log(forecastDate4);
+
+let displayForecastDate4 = document.querySelector("#day4");
+displayForecastDate4.innerHTML = calculateForecastDay4(forecastDate4);
+
+//Forecast Date 5
+function calculateForecastDay5(date) {
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  //date
+  let forecastDay = days[date.getDay()];
+  let forecastDate = date.getDate();
+  let forecastMonth = months[date.getMonth()];
+
+  let forecastedDate5 = `${forecastDay} <br /> ${forecastMonth} ${forecastDate}`;
+
+  return forecastedDate5;
+}
+
+let forecastDate5 = new Date(new Date().getTime() + 24 * 60 * 60 * 1000 * 5);
+console.log(forecastDate5);
+
+let displayForecastDate5 = document.querySelector("#day5");
+displayForecastDate5.innerHTML = calculateForecastDay5(forecastDate5);
+
+//Forecast Date 6
+function calculateForecastDay6(date) {
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  //date
+  let forecastDay = days[date.getDay()];
+  let forecastDate = date.getDate();
+  let forecastMonth = months[date.getMonth()];
+
+  let forecastedDate6 = `${forecastDay} <br /> ${forecastMonth} ${forecastDate}`;
+
+  return forecastedDate6;
+}
+
+let forecastDate6 = new Date(new Date().getTime() + 24 * 60 * 60 * 1000 * 6);
+console.log(forecastDate6);
+
+let displayForecastDate6 = document.querySelector("#day6");
+displayForecastDate6.innerHTML = calculateForecastDay6(forecastDate6);
+
 //Show current Location
 function showTemperature(response) {
   let actualLocation = response.data.name;
