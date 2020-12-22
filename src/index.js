@@ -72,14 +72,14 @@ function showForecast(response) {
   console.log(response.data.daily[1].temp.max);
 
   //Day 1
-  //let forecastDay1TempMax = Math.round(response.data.list[0].main.temp_max);
-  //let forecastDay1TempMin = Math.round(response.data.list[0].main.temp_min);
+  let forecastDay1TempMax = Math.round(response.data.daily[1].temp.max);
+  let forecastDay1TempMin = Math.round(response.data.daily[1].temp.min);
 
-  //let displayforecastDay1TempMax = document.querySelector("#day1TempMax");
-  //displayforecastDay1TempMax.innerHTML = forecastDay1TempMax;
+  let displayforecastDay1TempMax = document.querySelector("#day1TempMax");
+  displayforecastDay1TempMax.innerHTML = forecastDay1TempMax;
 
-  //let displayforecastDay1TempMin = document.querySelector("#day1TempMin");
-  //displayforecastDay1TempMin.innerHTML = forecastDay1TempMin;
+  let displayforecastDay1TempMin = document.querySelector("#day1TempMin");
+  displayforecastDay1TempMin.innerHTML = forecastDay1TempMin;
 }
 
 //show current Location
