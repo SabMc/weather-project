@@ -167,7 +167,6 @@ function calculateForecastDay1(date) {
 }
 
 let forecastDate1 = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
-console.log(forecastDate1);
 
 let displayForecastDate1 = document.querySelector("#day1");
 displayForecastDate1.innerHTML = calculateForecastDay1(forecastDate1);
@@ -210,7 +209,6 @@ function calculateForecastDay2(date) {
 }
 
 let forecastDate2 = new Date(new Date().getTime() + 24 * 60 * 60 * 1000 * 2);
-console.log(forecastDate2);
 
 let displayForecastDate2 = document.querySelector("#day2");
 displayForecastDate2.innerHTML = calculateForecastDay2(forecastDate2);
@@ -253,7 +251,6 @@ function calculateForecastDay3(date) {
 }
 
 let forecastDate3 = new Date(new Date().getTime() + 24 * 60 * 60 * 1000 * 3);
-console.log(forecastDate3);
 
 let displayForecastDate3 = document.querySelector("#day3");
 displayForecastDate3.innerHTML = calculateForecastDay3(forecastDate3);
@@ -296,7 +293,6 @@ function calculateForecastDay4(date) {
 }
 
 let forecastDate4 = new Date(new Date().getTime() + 24 * 60 * 60 * 1000 * 4);
-console.log(forecastDate4);
 
 let displayForecastDate4 = document.querySelector("#day4");
 displayForecastDate4.innerHTML = calculateForecastDay4(forecastDate4);
@@ -339,7 +335,6 @@ function calculateForecastDay5(date) {
 }
 
 let forecastDate5 = new Date(new Date().getTime() + 24 * 60 * 60 * 1000 * 5);
-console.log(forecastDate5);
 
 let displayForecastDate5 = document.querySelector("#day5");
 displayForecastDate5.innerHTML = calculateForecastDay5(forecastDate5);
@@ -382,7 +377,6 @@ function calculateForecastDay6(date) {
 }
 
 let forecastDate6 = new Date(new Date().getTime() + 24 * 60 * 60 * 1000 * 6);
-console.log(forecastDate6);
 
 let displayForecastDate6 = document.querySelector("#day6");
 displayForecastDate6.innerHTML = calculateForecastDay6(forecastDate6);
@@ -390,6 +384,13 @@ displayForecastDate6.innerHTML = calculateForecastDay6(forecastDate6);
 //Show current Location
 function showTemperature(response) {
   let actualLocation = response.data.name;
+
+  let getIcon = response.data.weather[0].icon;
+  let iconElement = document.querySelector("#current-emoji");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${getIcon}@2x.png`
+  );
 
   let temperature = Math.round(response.data.main.temp);
   let currentTemperatureMax = Math.round(response.data.main.temp_max);
