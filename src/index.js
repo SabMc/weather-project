@@ -389,7 +389,7 @@ function showTemperature(response) {
   let iconElement = document.querySelector("#current-emoji");
   iconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${getIcon}@2x.png`
+    `https://openweathermap.org/img/wn/${getIcon}@2x.png`
   );
 
   let temperature = Math.round(response.data.main.temp);
