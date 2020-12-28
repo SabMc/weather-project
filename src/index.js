@@ -432,8 +432,16 @@ function getCity(event) {
   newCity.innerHTML = cityInput.value;
 
   function showTemperature(response) {
-    let temperature = Math.round(response.data.main.temp);
+    console.log(response.data.weather[0].icon);
 
+    let getSearchIcon = response.data.weather[0].icon;
+    let SearchIconElement = document.querySelector("#current-emoji");
+    SearchIconElement.setAttribute(
+      "src",
+      `https://openweathermap.org/img/wn/${getSearchIcon}@2x.png`
+    );
+
+    let temperature = Math.round(response.data.main.temp);
     let temperatureMax = Math.round(response.data.main.temp_max);
     let temperatureMin = Math.round(response.data.main.temp_min);
     let humidity = response.data.main.humidity;
