@@ -69,8 +69,6 @@ function showPosition(position) {
 
 //Forecast current Position
 function showForecast(response) {
-  console.log(response.data.daily);
-
   //Day 1
   let forecastDay1TempMax = Math.round(response.data.daily[1].temp.max);
   let forecastDay1TempMin = Math.round(response.data.daily[1].temp.min);
@@ -476,8 +474,6 @@ function getCity(event) {
   newCity.innerHTML = cityInput.value;
 
   function showTemperature(response) {
-    console.log(response.data.weather[0].icon);
-
     let getSearchIcon = response.data.weather[0].icon;
     let SearchIconElement = document.querySelector("#current-emoji");
     SearchIconElement.setAttribute(
@@ -516,9 +512,7 @@ function getCity(event) {
   let city = cityInput.value;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
-  //let apiUrlForecast = `https://api.openweathermap.org/data/2.5/onecall?q=${city}&exclude=current,minutely,hourly,alerts&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemperature);
-  //axios.get(apiUrlForecast).then(showForecast);
 }
 let clickCityButton = document.querySelector("#search-form");
 clickCityButton = addEventListener("submit", getCity);

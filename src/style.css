@@ -76,6 +76,7 @@ hr {
 .card-body {
   font-size: 22px;
   padding-top: 0;
+  border-style: none none dotted;
 }
 .card-text {
   margin-bottom: 5px;
