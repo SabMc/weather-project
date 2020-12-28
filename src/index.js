@@ -173,7 +173,7 @@ function showForecast(response) {
 }
 //Forecast Date 1
 function calculateForecastDay1(date) {
-  let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   let months = [
     "Jan",
@@ -207,7 +207,7 @@ displayForecastDate1.innerHTML = calculateForecastDay1(forecastDate1);
 
 //Forecast Date 2
 function calculateForecastDay2(date) {
-  let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   let months = [
     "Jan",
@@ -241,15 +241,7 @@ displayForecastDate2.innerHTML = calculateForecastDay2(forecastDate2);
 
 //Forecast Date 3
 function calculateForecastDay3(date) {
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   let months = [
     "Jan",
@@ -283,15 +275,7 @@ displayForecastDate3.innerHTML = calculateForecastDay3(forecastDate3);
 
 //Forecast Date 4
 function calculateForecastDay4(date) {
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   let months = [
     "Jan",
@@ -325,15 +309,7 @@ displayForecastDate4.innerHTML = calculateForecastDay4(forecastDate4);
 
 //Forecast Date 5
 function calculateForecastDay5(date) {
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   let months = [
     "Jan",
@@ -367,15 +343,7 @@ displayForecastDate5.innerHTML = calculateForecastDay5(forecastDate5);
 
 //Forecast Date 6
 function calculateForecastDay6(date) {
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   let months = [
     "Jan",
