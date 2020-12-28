@@ -69,6 +69,8 @@ function showPosition(position) {
 
 //Forecast current Position
 function showForecast(response) {
+  console.log(response.data.daily);
+
   //Day 1
   let forecastDay1TempMax = Math.round(response.data.daily[1].temp.max);
   let forecastDay1TempMin = Math.round(response.data.daily[1].temp.min);
@@ -78,6 +80,13 @@ function showForecast(response) {
 
   let displayforecastDay1TempMin = document.querySelector("#day1TempMin");
   displayforecastDay1TempMin.innerHTML = forecastDay1TempMin;
+
+  let getIconDay1 = response.data.daily[1].weather[0].icon;
+  let iconElementDay1 = document.querySelector("#emoji-day1");
+  iconElementDay1.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${getIconDay1}@2x.png`
+  );
 
   //Day 2
   let forecastDay2TempMax = Math.round(response.data.daily[2].temp.max);
@@ -89,6 +98,13 @@ function showForecast(response) {
   let displayforecastDay2TempMin = document.querySelector("#day2TempMin");
   displayforecastDay2TempMin.innerHTML = forecastDay2TempMin;
 
+  let getIconDay2 = response.data.daily[2].weather[0].icon;
+  let iconElementDay2 = document.querySelector("#emoji-day2");
+  iconElementDay2.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${getIconDay2}@2x.png`
+  );
+
   //Day 3
   let forecastDay3TempMax = Math.round(response.data.daily[3].temp.max);
   let forecastDay3TempMin = Math.round(response.data.daily[3].temp.min);
@@ -98,6 +114,13 @@ function showForecast(response) {
 
   let displayforecastDay3TempMin = document.querySelector("#day3TempMin");
   displayforecastDay3TempMin.innerHTML = forecastDay3TempMin;
+
+  let getIconDay3 = response.data.daily[3].weather[0].icon;
+  let iconElementDay3 = document.querySelector("#emoji-day3");
+  iconElementDay3.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${getIconDay3}@2x.png`
+  );
 
   //Day 4
   let forecastDay4TempMax = Math.round(response.data.daily[4].temp.max);
@@ -109,6 +132,13 @@ function showForecast(response) {
   let displayforecastDay4TempMin = document.querySelector("#day4TempMin");
   displayforecastDay4TempMin.innerHTML = forecastDay4TempMin;
 
+  let getIconDay4 = response.data.daily[4].weather[0].icon;
+  let iconElementDay4 = document.querySelector("#emoji-day4");
+  iconElementDay4.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${getIconDay4}@2x.png`
+  );
+
   //Day 5
   let forecastDay5TempMax = Math.round(response.data.daily[5].temp.max);
   let forecastDay5TempMin = Math.round(response.data.daily[5].temp.min);
@@ -119,6 +149,13 @@ function showForecast(response) {
   let displayforecastDay5TempMin = document.querySelector("#day5TempMin");
   displayforecastDay5TempMin.innerHTML = forecastDay5TempMin;
 
+  let getIconDay5 = response.data.daily[5].weather[0].icon;
+  let iconElementDay5 = document.querySelector("#emoji-day5");
+  iconElementDay5.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${getIconDay5}@2x.png`
+  );
+
   //Day 6
   let forecastDay6TempMax = Math.round(response.data.daily[6].temp.max);
   let forecastDay6TempMin = Math.round(response.data.daily[6].temp.min);
@@ -128,6 +165,13 @@ function showForecast(response) {
 
   let displayforecastDay6TempMin = document.querySelector("#day6TempMin");
   displayforecastDay6TempMin.innerHTML = forecastDay6TempMin;
+
+  let getIconDay6 = response.data.daily[6].weather[0].icon;
+  let iconElementDay6 = document.querySelector("#emoji-day6");
+  iconElementDay6.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${getIconDay6}@2x.png`
+  );
 }
 //Forecast Date 1
 function calculateForecastDay1(date) {
