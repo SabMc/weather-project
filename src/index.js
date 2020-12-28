@@ -173,15 +173,7 @@ function showForecast(response) {
 }
 //Forecast Date 1
 function calculateForecastDay1(date) {
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+  let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
   let months = [
     "Jan",
@@ -215,15 +207,7 @@ displayForecastDate1.innerHTML = calculateForecastDay1(forecastDate1);
 
 //Forecast Date 2
 function calculateForecastDay2(date) {
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+  let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
   let months = [
     "Jan",
